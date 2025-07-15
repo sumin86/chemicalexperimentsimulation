@@ -57,8 +57,8 @@
     #stageArea {
       width: 80%;
       max-width: 700px;
-      min-height: 120px;
-      margin: 30px auto 20px;
+      min-height: 150px;
+      margin: 30px auto 10px;
       padding: 20px;
       border: 2px solid #aaa;
       border-radius: 10px;
@@ -130,14 +130,12 @@
 </head>
 <body>
 
-  <!-- 시작 화면 -->
   <div id="mainmenu">
     <h1>화학 실험 시뮬레이션 - 아스피린 합성하기</h1>
     <p>made by 정임</p>
     <button id="startButton">시작하기</button>
   </div>
 
-  <!-- 선택 화면 -->
   <div id="section" class="hidden">
     <h1>화학 실험 시뮬레이션 - 아스피린 합성하기</h1>
     <p>made by 정임</p>
@@ -145,36 +143,18 @@
     <button id="experiment">실험하기</button>
   </div>
 
-  <!-- 실험 설명 화면 -->
   <div id="explanationScreen" class="hidden">
     <h1>실험 설명</h1>
     <div class="infoBox">
       <p>
-        1. 아스피린 Aspirin <br>
-        - 아세틸 살리실산 Acetylsalicylic Acid(C9H8O4) <br>
-        - 최초로 합성된 해열 및 소염 진통제이자 혈전 예방약 <br>
-        - 살리실산(C7H6O3)과 아세트산(CH3COOH)이 반응하여 아세틸 살리실산(C9H8O4) 생성 <br>
-        + 아세틸:CH3CO (아세틸기), 살리실산: C7H6O3<br>
-        <img src="https://github.com/sumin86/chemicalexperimentsimulation/blob/main/%EC%95%84%EC%84%B8%ED%8A%B8%EC%82%B0%20%EC%95%84%EC%8A%A4%ED%94%BC%EB%A6%B0.png?raw=true" alt="살리실산 아세트산" class="infoBox"> <br><br>
-        2. 반응 원리<br>
-        - 반응식: C7H6O3 + C4H6O3 → C9H8O4 + CH3COOH <br>
-        - 실험에서는 아스피린 수득률 올리기 위해 아세트산(CH3COOH) 대신 아세트산 무수물(C4H6O3) 사용 <br>
-        <img src="https://github.com/sumin86/chemicalexperimentsimulation/blob/main/%EC%82%B4%EB%A6%AC%EC%8B%A4%EC%82%B0%20%EC%95%84%EC%84%B8%ED%8A%B8%EC%82%B0%EB%AC%B4%EC%88%98%EB%AC%BC.png?raw=true" alt="살리실산 아세트산무수물" class="infoBox"> <br><br>
-        3. 실험하기<br>
-        - 목표 : 아스피린(C9H8O4) 합성<br>
-        - 시약 : 살리실산, 아세트산 무수물, 인산(촉매), 증류수, 얼음<br>
-        - 실험 기구 : 100ml 삼각플라스크, 전자 저울, 피펫, 스포이드, 1L 비커, 핫플레이트, 거름종이, 페트리접시<br>
-        (1) 살리실산 2.5g + 아세트산 무수물 3ml + 인산 3방울 (촉매)<br>
-        (2) 80°C에서 10분 물 중탕 가열<br>
-        (3) 삼각 플라스크 냉각해 결정 생성 관찰<br>
-        (4) 거름종이 이용해 여과 후 건조 ⇒ 아스피린 수득률 계산 <br>
-
+        아스피린은 아세틸살리실산(C9H8O4)으로, 최초로 합성된 해열·진통·소염제입니다.<br>
+        살리실산(C7H6O3)과 아세트산 무수물(C4H6O3)이 반응하여 생성되며, 촉매로 인산이 사용됩니다.<br>
+        실험 순서: 계량 → 반응 → 가열 → 냉각 → 여과 → 건조 → 계량
       </p>
     </div>
     <button onclick="goBack()">돌아가기</button>
   </div>
 
-  <!-- 실험 화면 -->
   <div id="experimentScreen" class="hidden">
     <h1>화학 실험 시뮬레이션</h1>
     <div id="stageArea">[실험 단계 설명이 여기에 표시됩니다]</div>
@@ -195,100 +175,143 @@
     <button id="back">돌아가기</button>
   </div>
 
-<script>
-  document.getElementById('startButton').addEventListener('click', () => {
-    document.getElementById('mainmenu').classList.add('hidden');
-    document.getElementById('section').classList.remove('hidden');
-  });
-
-  document.getElementById('explanation').addEventListener('click', () => {
-    document.getElementById('section').classList.add('hidden');
-    document.getElementById('explanationScreen').classList.remove('hidden');
-  });
-
-  function goBack() {
-    document.getElementById('explanationScreen').classList.add('hidden');
-    document.getElementById('section').classList.remove('hidden');
-  }
-
-  document.getElementById('back').addEventListener('click', () => {
-    document.getElementById('experimentScreen').classList.add('hidden');
-    document.getElementById('section').classList.remove('hidden');
-  });
-
-  const steps = [
-    { text: "1단계: _____을 이용해 _____을 계량하여 삼각플라스크에 담습니다.", answers: ["전자저울", "살리실산"] },
-    { text: "2단계: _____으로 _____을 정확히 넣습니다.", answers: ["피펫", "아세트산무수물"] },
-    { text: "3단계: _____로 _____을 몇 방울 첨가합니다.", answers: ["스포이드", "인산"] },
-    { text: "4단계: _____ 위 비커에 물을 가열하고 삼각플라스크를 _____시킵니다.", answers: ["핫플레이트", "중탕"] },
-    { text: "5단계: _____를 넣어 식히고, 결정 생성을 관찰합니다.", answers: ["증류수"] },
-    { text: "6단계: 결정들을 _____가 깔린 ______에 옮겨 건조한 뒤 _____로 무게를 측정합니다.", answers: ["거름종이", "페트리접시", "전자저울"] }
-  ];
-
-  let currentStep = 0;
-  let filled = [];
-
-  const stageArea = document.getElementById("stageArea");
-  const message = document.getElementById("message");
-
-  document.getElementById('experiment').addEventListener('click', () => {
-    document.getElementById('section').classList.add('hidden');
-    document.getElementById('experimentScreen').classList.remove('hidden');
-    currentStep = 0;
-    renderStep(currentStep);
-  });
-
-  function renderStep(stepIndex) {
-    const step = steps[stepIndex];
-    const parts = step.text.split("_____");
-    stageArea.innerHTML = "";
-    filled = Array(step.answers.length).fill(false);
-
-    parts.forEach((part, index) => {
-      stageArea.append(part);
-      if (index < step.answers.length) {
-        const blank = document.createElement("span");
-        blank.className = "blank";
-        blank.dataset.index = index;
-        blank.textContent = "[빈칸]";
-        blank.addEventListener("dragover", e => e.preventDefault());
-        blank.addEventListener("drop", e => handleDrop(e, index, blank, step));
-        stageArea.append(blank);
-      }
+  <script>
+    document.getElementById('startButton').addEventListener('click', () => {
+      document.getElementById('mainmenu').classList.add('hidden');
+      document.getElementById('section').classList.remove('hidden');
     });
-  }
 
-  function handleDrop(e, index, blank, step) {
-    e.preventDefault();
-    const toolId = e.dataTransfer.getData("text/plain");
-    const correct = step.answers[index];
+    document.getElementById('explanation').addEventListener('click', () => {
+      document.getElementById('section').classList.add('hidden');
+      document.getElementById('explanationScreen').classList.remove('hidden');
+    });
 
-    if (toolId === correct) {
-      blank.textContent = toolId;
-      blank.style.border = "2px solid green";
-      blank.style.backgroundColor = "#d4f9d4";
-      filled[index] = true;
-
-      if (filled.every(Boolean)) {
-        message.textContent = "";
-        currentStep++;
-        if (currentStep < steps.length) {
-          setTimeout(() => renderStep(currentStep), 1000);
-        } else {
-          stageArea.innerHTML = "✅ 실험 완료! 수고하셨습니다.";
-        }
-      }
-    } else {
-      message.textContent = "❌ 이 빈칸에 들어갈 도구가 아닙니다.";
+    function goBack() {
+      document.getElementById('explanationScreen').classList.add('hidden');
+      document.getElementById('section').classList.remove('hidden');
     }
-  }
 
-  document.querySelectorAll(".tool").forEach(tool => {
-    tool.addEventListener("dragstart", e => {
-      e.dataTransfer.setData("text/plain", e.target.id);
+    document.getElementById('back').addEventListener('click', () => {
+      document.getElementById('experimentScreen').classList.add('hidden');
+      document.getElementById('section').classList.remove('hidden');
     });
-  });
-</script>
 
+    const steps = [
+      {
+        text: "1단계: _____을 이용해 _____을 계량하여 삼각플라스크에 담습니다.",
+        answers: ["전자저울", "살리실산"],
+        image: "https://raw.githubusercontent.com/sumin86/chemicalexperimentsimulation/main/1.jpg"
+      },
+      {
+        text: "2단계: _____으로 _____을 정확히 넣습니다.",
+        answers: ["피펫", "아세트산무수물"],
+        image: "https://raw.githubusercontent.com/sumin86/chemicalexperimentsimulation/main/2.jpg"
+      },
+      {
+        text: "3단계: _____로 _____을 몇 방울 첨가합니다.",
+        answers: ["스포이드", "인산"],
+        image: "https://raw.githubusercontent.com/sumin86/chemicalexperimentsimulation/main/3.jpg"
+      },
+      {
+        text: "4단계: _____ 위 비커에 물을 가열하고 삼각플라스크를 _____시킵니다.",
+        answers: ["핫플레이트", "중탕"],
+        image: "https://raw.githubusercontent.com/sumin86/chemicalexperimentsimulation/main/4.jpg"
+      },
+      {
+        text: "5단계: _____를 넣어 식히고, 결정 생성을 관찰합니다.",
+        answers: ["증류수"],
+        image: "https://raw.githubusercontent.com/sumin86/chemicalexperimentsimulation/main/5.jpg"
+      },
+      {
+        text: "6단계: 결정들을 _____가 깔린 ______에 옮겨 건조합니다.",
+        answers: ["거름종이", "페트리접시"],
+        image: "https://raw.githubusercontent.com/sumin86/chemicalexperimentsimulation/main/6.jpg"
+      },
+      {
+        text: "7단계: 건조시킨 결정들을 _____로 무게를 측정합니다.",
+        answers: ["전자저울"],
+        image: "https://raw.githubusercontent.com/sumin86/chemicalexperimentsimulation/main/7.jpg"
+      }
+    ];
+
+    let currentStep = 0;
+    let filled = [];
+
+    const stageArea = document.getElementById("stageArea");
+    const message = document.getElementById("message");
+
+    document.getElementById('experiment').addEventListener('click', () => {
+      document.getElementById('section').classList.add('hidden');
+      document.getElementById('experimentScreen').classList.remove('hidden');
+      currentStep = 0;
+      renderStep(currentStep);
+    });
+
+    function renderStep(stepIndex) {
+      const step = steps[stepIndex];
+      const parts = step.text.split("_____");
+      stageArea.innerHTML = "";
+      filled = Array(step.answers.length).fill(false);
+
+      parts.forEach((part, index) => {
+        stageArea.append(part);
+        if (index < step.answers.length) {
+          const blank = document.createElement("span");
+          blank.className = "blank";
+          blank.dataset.index = index;
+          blank.textContent = "[빈칸]";
+          blank.addEventListener("dragover", e => e.preventDefault());
+          blank.addEventListener("drop", e => handleDrop(e, index, blank, step));
+          stageArea.append(blank);
+        }
+      });
+
+      if (step.image) {
+        const img = document.createElement("img");
+        img.src = step.image;
+        img.alt = "실험 단계 이미지";
+        img.style.marginTop = "20px";
+        img.style.width = "200px";
+        img.style.height = "auto";
+        img.style.display = "block";
+        img.style.margin = "10px auto";
+        img.style.borderRadius = "10px";
+        img.style.boxShadow = "0 2px 10px rgba(0,0,0,0.2)";
+        stageArea.appendChild(document.createElement("br"));
+        stageArea.appendChild(img);
+      }
+    }
+
+    function handleDrop(e, index, blank, step) {
+      e.preventDefault();
+      const toolId = e.dataTransfer.getData("text/plain");
+      const correct = step.answers[index];
+
+      if (toolId === correct) {
+        blank.textContent = toolId;
+        blank.style.border = "2px solid green";
+        blank.style.backgroundColor = "#d4f9d4";
+        filled[index] = true;
+
+        if (filled.every(Boolean)) {
+          message.textContent = "";
+          currentStep++;
+          if (currentStep < steps.length) {
+            setTimeout(() => renderStep(currentStep), 1000);
+          } else {
+            stageArea.innerHTML = "✅ 실험 완료! 수고하셨습니다.";
+          }
+        }
+      } else {
+        message.textContent = "❌ 이 빈칸에 들어갈 도구가 아닙니다.";
+      }
+    }
+
+    document.querySelectorAll(".tool").forEach(tool => {
+      tool.addEventListener("dragstart", e => {
+        e.dataTransfer.setData("text/plain", e.target.id);
+      });
+    });
+  </script>
 </body>
 </html>
