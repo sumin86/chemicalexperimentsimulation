@@ -126,19 +126,29 @@
       font-size: 1.1em;
       line-height: 1.6;
     }
+
+    .percentbox {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .percent {
+      padding: 10px;
+      border: 2px solid #999;
+      border-radius: 5px;
+      background-color: #e0e0e0;
+      cursor: grab;
+      user-select: none;
+      margin: 5px;
+    }
   </style>
 </head>
 <body>
 
-  <div id="mainmenu">
+  <div id="section" >
     <h1>화학 실험 시뮬레이션 - 아스피린 합성하기</h1>
-    <p>made by 정임</p>
-    <button id="startButton">시작하기</button>
-  </div>
-
-  <div id="section" class="hidden">
-    <h1>화학 실험 시뮬레이션 - 아스피린 합성하기</h1>
-    <p>made by 정임</p>
+    <p>made by 30610 임수민, 30612 정서영</p>
     <button id="explanation">실험설명</button>
     <button id="experiment">실험하기</button>
   </div>
@@ -152,19 +162,24 @@
         - 최초로 합성된 해열 및 소염 진통제이자 혈전 예방약 <br>
         - 살리실산(C7H6O3)과 아세트산(CH3COOH)이 반응하여 아세틸 살리실산(C9H8O4) 생성 <br>
         + 아세틸:CH3CO (아세틸기), 살리실산: C7H6O3<br>
-        <img src="https://github.com/sumin86/chemicalexperimentsimulation/blob/main/%EC%95%84%EC%84%B8%ED%8A%B8%EC%82%B0%20%EC%95%84%EC%8A%A4%ED%94%BC%EB%A6%B0.png?raw=true" alt="살리실산 아세트산" class="infoBox"> <br><br>
+        <img src="https://github.com/sumin86/chemicalexperimentsimulation/blob/main/%EC%95%84%EC%84%B8%ED%8A%B8%EC%82%B0%20%EC%95%84%EC%8A%A4%ED%94%BC%EB%A6%B0.png?raw=true"  alt="살리실산 아세트산무수물" class="infoBox"> <br><br>
         2. 반응 원리<br>
         - 반응식: C7H6O3 + C4H6O3 → C9H8O4 + CH3COOH <br>
         - 실험에서는 아스피린 수득률 올리기 위해 아세트산(CH3COOH) 대신 아세트산 무수물(C4H6O3) 사용 <br>
-        <img src="https://github.com/sumin86/chemicalexperimentsimulation/blob/main/%EC%82%B4%EB%A6%AC%EC%8B%A4%EC%82%B0%20%EC%95%84%EC%84%B8%ED%8A%B8%EC%82%B0%EB%AC%B4%EC%88%98%EB%AC%BC.png?raw=true" alt="살리실산 아세트산무수물" class="infoBox"> <br><br>
+        <img src="https://github.com/sumin86/chemicalexperimentsimulation/blob/main/%EC%82%B4%EB%A6%AC%EC%8B%A4%EC%82%B0%20%EC%95%84%EC%84%B8%ED%8A%B8%EC%82%B0%EB%AC%B4%EC%88%98%EB%AC%BC.png?raw=true"  alt="살리실산 아세트산무수물" class="infoBox"> <br><br>
         3. 실험하기<br>
         - 목표 : 아스피린(C9H8O4) 합성<br>
         - 시약 : 살리실산, 아세트산 무수물, 인산(촉매), 증류수, 얼음<br>
-        - 실험 기구 : 100ml 삼각플라스크, 전자 저울, 피펫, 스포이드, 1L 비커, 핫플레이트, 거름종이, 페트리접시<br>
-        (1) 살리실산 2.5g + 아세트산 무수물 3ml + 인산 3방울 (촉매)<br>
-        (2) 80°C에서 10분 물 중탕 가열<br>
-        (3) 삼각 플라스크 냉각해 결정 생성 관찰<br>
-        (4) 거름종이 이용해 여과 후 건조 ⇒ 아스피린 수득률 계산 <br>
+        - 실험 기구 : 약숟가락, 유산지, 눈금실린더, 스포이드, 100ml 삼각플라스크, 가열교반기, 실험 스탠드와 클램프, 1L 비커, 거름종이, 페트리접시<br>
+        (1) 살리실산 5g을 준비한다. <br>
+        필요물품 : 살리실산, (약숟가락), (유산지) <br>  
+        (2) 아세트산무수물 6mL을 준비한다.<br> 
+        필요 물품: 아세트산무수물, (눈금실린더), (스포이드)<br>
+        (3) 삼각플라스크에 (살리실산) 5g과 (아세트산무수물) 6mL을 넣는다. 필요 물품: 삼각플라스크<br>
+        (4) 인산을 4~5방울 떨어뜨린다. 필요 물품: (인산), 스포이드 <br>
+        (5) 삼각플라스크를 고정하여 80도에서 10분간 중탕으로 가열한다. 필요물품: (가열교반기), (실험 스탠드와 클램프), 비커 <br>
+        (6) 가열이 끝난 삼각플라스크에 증류수를 소량 넣어 남은 (아세트산 무수물)을 분해한다. 필요 물품: 증류수, 비커 <br>
+        (7) 삼각플라스크를 식힌 후 생성된 (아스피린)을 긁어내어 거름종이를 이용해 걸러낸다. 필요 물품: 거름종이, 페트리접시, 약숟가락
       </p>
     </div>
     <button onclick="goBack()">돌아가기</button>
@@ -174,27 +189,30 @@
     <h1>화학 실험 시뮬레이션</h1>
     <div id="stageArea">[실험 단계 설명이 여기에 표시됩니다]</div>
     <div id="message"></div>
-    <div class="toolbox">
+    <div class="toolbox" id="toolbox">
       <div class="tool" draggable="true" id="인산">인산</div>
-      <div class="tool" draggable="true" id="핫플레이트">핫플레이트</div>
+      <div class="tool" draggable="true" id="약숟가락">약숟가락</div>
       <div class="tool" draggable="true" id="살리실산">살리실산</div>
-      <div class="tool" draggable="true" id="거름종이">거름종이</div>
+      <div class="tool" draggable="true" id="실험 스탠드와 클램프">실험 스탠드와 클램프</div>
+      <div class="tool" draggable="true" id="눈금실린더">눈금실린더</div>
       <div class="tool" draggable="true" id="스포이드">스포이드</div>
       <div class="tool" draggable="true" id="전자저울">전자저울</div>
-      <div class="tool" draggable="true" id="중탕">중탕</div>
-      <div class="tool" draggable="true" id="증류수">증류수</div>
+      <div class="tool" draggable="true" id="아스피린">아스피린</div>
+      <div class="tool" draggable="true" id="유산지">유산지</div>
       <div class="tool" draggable="true" id="아세트산무수물">아세트산무수물</div>
-      <div class="tool" draggable="true" id="페트리접시">페트리접시</div>
+      <div class="tool" draggable="true" id="가열교반기">가열교반기</div>
     </div>
+    <div class="percentbox" id="percentbox">
+      <div class="percent" draggable="true" id="80.55%">80.55%</div>
+      <div class="percent" draggable="true" id="81.55%">81.55%</div>
+      <div class="percent" draggable="true" id="82.55%">82.55%</div>
+      <div class="percent" draggable="true" id="79.55%">79.55%</div>
+    </div>
+
     <button id="back">돌아가기</button>
   </div>
 
   <script>
-    document.getElementById('startButton').addEventListener('click', () => {
-      document.getElementById('mainmenu').classList.add('hidden');
-      document.getElementById('section').classList.remove('hidden');
-    });
-
     document.getElementById('explanation').addEventListener('click', () => {
       document.getElementById('section').classList.add('hidden');
       document.getElementById('explanationScreen').classList.remove('hidden');
@@ -212,39 +230,44 @@
 
     const steps = [
       {
-        text: "1단계: _____을 이용해 _____을 계량하여 삼각플라스크에 담습니다.",
-        answers: ["전자저울", "살리실산"],
+        text: "1단계: 살리실산 5g을 준비한다. 필요 물품 : 살리실산, _____, _____, _____",
+        answers: ["전자저울", "약숟가락", "유산지"],
         image: "https://raw.githubusercontent.com/sumin86/chemicalexperimentsimulation/main/1.jpg"
       },
       {
-        text: "2단계: _____으로 _____을 정확히 넣습니다.",
-        answers: ["스포이드", "아세트산무수물"],
+        text: "2단계: 아세트산무수물 6ml을 준비한다. 필요 물품 : 아세트산 무수물, _____, ",
+        answers: ["눈금실린더", "스포이드"],
+        image: "https://raw.githubusercontent.com/sumin86/chemicalexperimentsimulation/main/8.jpg"
+      },
+      {
+        text: "3단계: 삼각플라스크에 _____ 5g과 __________ 6ml을 넣는다. 필요 물품 : 삼각플라스크",
+        answers: ["살리실산", "아세트산무수물"],
         image: "https://raw.githubusercontent.com/sumin86/chemicalexperimentsimulation/main/2.jpg"
       },
       {
-        text: "3단계: _____로 _____을 몇 방울 첨가합니다.",
-        answers: ["스포이드", "인산"],
+        text: "4단계: 인산을 4~5방울 떨어뜨린다. 필요 물품 : __________, 스포이드",
+        answers: ["인산"],
         image: "https://raw.githubusercontent.com/sumin86/chemicalexperimentsimulation/main/3.jpg"
       },
       {
-        text: "4단계: _____ 위 비커에 물을 가열하고 삼각플라스크를 _____시킵니다.",
-        answers: ["핫플레이트", "중탕"],
+        text: "5단계: 삼각플라스크를 고정하여 80도에서 10분간 중탕으로 가열한다. 필요물품 : _____, __________, 비커",
+        answers: ["가열교반기", "실험 스탠드와 클램프"],
         image: "https://raw.githubusercontent.com/sumin86/chemicalexperimentsimulation/main/4.jpg"
       },
       {
-        text: "5단계: _____를 넣어 식히고, 결정 생성을 관찰합니다.",
-        answers: ["증류수"],
+        text: "6단계: 가열이 끝난 삼각플라스크에 증류수를 소량 넣어 남은 _____을 분해한다. 필요물품 : 증류수, 비커",
+        answers: ["아세트산무수물"],
         image: "https://raw.githubusercontent.com/sumin86/chemicalexperimentsimulation/main/5.jpg"
       },
       {
-        text: "6단계: 결정들을 _____가 깔린 _____에 옮겨 건조합니다.",
-        answers: ["거름종이", "페트리접시"],
+        text: "7단계: 삼각플라스크를 식힌 후 생성된 _____을 긁어내어 거름종이를 이용해 걸러낸다. 필요물품 : 거름종이, 페트리접시, 약숟가락",
+        answers: ["아스피린"],
         image: "https://raw.githubusercontent.com/sumin86/chemicalexperimentsimulation/main/6.jpg"
       },
       {
-        text: "7단계: 건조시킨 결정들을 _____로 무게를 측정합니다.",
-        answers: ["전자저울"],
-        image: "https://raw.githubusercontent.com/sumin86/chemicalexperimentsimulation/main/7.jpg"
+        text: "8단계: 실험 결과 아스피린 5.3g이 생성되었다. 이제 수득률을 계산해보자. (살리실산의 몰수 5138 = 0.036몰, 아스피린의 몰수 5.3180 = 0.029몰) 정답은 _____이다.",
+        answers: ["80.55%"],
+        image: "https://github.com/sumin86/chemicalexperimentsimulation/blob/main/%EC%88%98%EB%93%9D%EB%A5%A0.png?raw=true"
       }
     ];
 
@@ -253,6 +276,8 @@
 
     const stageArea = document.getElementById("stageArea");
     const message = document.getElementById("message");
+    const toolbox = document.getElementById("toolbox");
+    const percentbox = document.getElementById("percentbox");
 
     document.getElementById('experiment').addEventListener('click', () => {
       document.getElementById('section').classList.add('hidden');
@@ -310,19 +335,28 @@
         if (filled.every(Boolean)) {
           message.textContent = "";
           currentStep++;
+
           if (currentStep < steps.length) {
-            setTimeout(() => renderStep(currentStep), 1000);
+            setTimeout(() => {
+              renderStep(currentStep);
+            }, 1000);
           } else {
             stageArea.innerHTML = "✅ 실험 완료! 수고하셨습니다.";
           }
         }
       } else {
-        message.textContent = "❌ 이 빈칸에 들어갈 도구가 아닙니다.";
+        message.textContent = "❌ 이 빈칸에 들어갈 도구가 아닙니다. 어렵다면 실험 설명을 확인하세요!";
       }
     }
 
     document.querySelectorAll(".tool").forEach(tool => {
       tool.addEventListener("dragstart", e => {
+        e.dataTransfer.setData("text/plain", e.target.id);
+      });
+    });
+
+    document.querySelectorAll(".percent").forEach(percent => {
+      percent.addEventListener("dragstart", e => {
         e.dataTransfer.setData("text/plain", e.target.id);
       });
     });
